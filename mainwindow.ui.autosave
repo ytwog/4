@@ -24,21 +24,6 @@
      </rect>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>81</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Загрузить
-данные с
-файла</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="ExitButton">
     <property name="geometry">
      <rect>
