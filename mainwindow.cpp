@@ -124,9 +124,14 @@ void MainWindow::updateData()
     }
     if(!Swapped)
     {
+        int RowNumb = 0;
+        ui->firstList->insertColumn(4);
         for(QVector<Data>::iterator it = arrA.begin(); it != arrA.end(); it++)
         {
-            ui->firstList->addItem(it->getName());
+            ui->firstList->insertRow(1);
+            RowNumb++;
+            QTableWidgetItem Item = QTableWidgetItem(it->getName());
+            ui->firstList->setItem(RowNumb-1, 0, &Item);
             QObject::connect(ui->firstList, SIGNAL(doubleClicked( QModelIndex )), this, SLOT(showRelations( QModelIndex )));
         }
     }
@@ -134,7 +139,7 @@ void MainWindow::updateData()
     {
         for(QVector<Data>::iterator it = arrB.begin(); it != arrB.end(); it++)
         {
-            ui->firstList->addItem(it->getName());
+            //ui->firstList->addItem(it->getName());
             QObject::connect(ui->firstList, SIGNAL(doubleClicked( QModelIndex )), this, SLOT(showRelations( QModelIndex )));
         }
     }
@@ -156,6 +161,7 @@ void MainWindow::showRelations(QModelIndex Qindex)
     QSet <QString> tmp = Obj.getCon();
     for(QSet<QString>::Iterator it = tmp.begin(); it != tmp.end(); it++)
     {
+        //QObject::connect(ui->firstList, SIGNAL(doubleClicked( QModelIndex )), this, SLOT(showRelations( QModelIndex )));
         ui->secondList->addItem(*it);
     }
 }
@@ -167,6 +173,6 @@ void MainWindow::on_actionStOpenAction_triggered()
 
 void MainWindow::on_swapButton_clicked()
 {
-    Swapped = true;
+    Swapped = !Swapped;
     updateData();
 }
