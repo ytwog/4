@@ -6,50 +6,127 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>791</width>
-    <height>474</height>
+    <width>915</width>
+    <height>475</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QListView" name="listView">
-    <property name="geometry">
-     <rect>
-      <x>100</x>
-      <y>70</y>
-      <width>191</width>
-      <height>161</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>81</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Загрузить
-данные с
-файла</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="ExitButton">
     <property name="geometry">
      <rect>
-      <x>690</x>
-      <y>330</y>
+      <x>810</x>
+      <y>340</y>
       <width>81</width>
-      <height>61</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
      <string>Выход</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="swapButton">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>10</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Поменять местами</string>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="errBrowser">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>320</y>
+      <width>101</width>
+      <height>61</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="firstList">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>60</y>
+      <width>231</width>
+      <height>231</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="secondList">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>60</y>
+      <width>231</width>
+      <height>231</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="textBrowser">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>60</y>
+      <width>181</width>
+      <height>231</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="textBrowser_2">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>60</y>
+      <width>181</width>
+      <height>231</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>485</x>
+      <y>10</y>
+      <width>31</width>
+      <height>331</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>30</y>
+      <width>41</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Рейсы</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>760</x>
+      <y>30</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Аэропорты</string>
     </property>
    </widget>
   </widget>
@@ -58,16 +135,10 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>791</width>
+     <width>915</width>
      <height>26</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menu">
-    <property name="title">
-     <string>Файл</string>
-    </property>
-   </widget>
-   <addaction name="menu"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -77,6 +148,8 @@
     <bool>false</bool>
    </attribute>
    <addaction name="OpenAction"/>
+   <addaction name="separator"/>
+   <addaction name="actionStOpenAction"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="OpenAction">
@@ -88,6 +161,17 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionStOpenAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Открыть стандартный файл</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+O</string>
    </property>
   </action>
  </widget>
