@@ -125,14 +125,17 @@ void MainWindow::updateData()
     if(!Swapped)
     {
         int RowNumb = 0;
-        ui->firstList->insertColumn(4);
+        ui->firstList->setColumnCount(4);
+        ui->firstList->setColumnWidth(1, (ui->firstList->width() - ui->firstList->verticalHeader()->size().width() - qApp->style()->pixelMetric(QStyle::PM_ScrollBarExtent)) / 3);
+        ui->firstList->setColumnWidth(2, (ui->firstList->width() - ui->firstList->verticalHeader()->size().width() - qApp->style()->pixelMetric(QStyle::PM_ScrollBarExtent)) / 6);
+        ui->firstList->setColumnWidth(3, (ui->firstList->width() - ui->firstList->verticalHeader()->size().width() - qApp->style()->pixelMetric(QStyle::PM_ScrollBarExtent)) / 12);
+        ui->firstList->horizontalHeader()->setStretchLastSection(1);
         for(QVector<Data>::iterator it = arrA.begin(); it != arrA.end(); it++)
         {
-            ui->firstList->insertRow(1);
-            RowNumb++;
+            ui->firstList->setRowCount(ui->firstList->rowCount() + 1);
             QTableWidgetItem Item = QTableWidgetItem(it->getName());
-            ui->firstList->setItem(RowNumb-1, 0, &Item);
-            QObject::connect(ui->firstList, SIGNAL(doubleClicked( QModelIndex )), this, SLOT(showRelations( QModelIndex )));
+            ui->firstList->setItem(ui->firstList->rowCount(), 1, &Item);
+            //QObject::connect(ui->firstList, SIGNAL(doubleClicked( QModelIndex )), this, SLOT(showRelations( QModelIndex )));
         }
     }
     else
