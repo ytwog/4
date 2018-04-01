@@ -27,6 +27,8 @@ public:
     ~MainWindow();
     void updateData();
     void readFile(QString dir = "input.dat");
+    bool CheckClones(bool VecNumber, QString _name);
+    bool Connect(QString PortName, QString FlightName);
 private slots:
 
     void on_ExitButton_clicked();
@@ -35,15 +37,31 @@ private slots:
 
     void on_actionStOpenAction_triggered();
 
-    void showRelations(QModelIndex index);
+    void showRelationsFlights(QModelIndex Qindex);
 
-    void on_swapButton_clicked();
+    void showRelationsPorts(QModelIndex Qindex);
+
+    void on_comboBox_activated(const QString &arg1);
+
+    void UpdateGeometry();
+
+    void on_addButton_clicked();
+
+    void HidePorts(bool value);
+
+    void HideFlights(bool value);
+
+    void on_conButton_clicked();
+
+    void on_disconButton_clicked();
+
+    void on_save_triggered();
 
 private:
-    bool Swapped = false;
+    short ToAdd;
     Ui::MainWindow *ui;
-    QVector <Data> arrA;
-    QVector <Data> arrB;
+    QVector <Airports> VecA;
+    QVector <Flights> VecF;
 };
 
 #endif // MAINWINDOW_H

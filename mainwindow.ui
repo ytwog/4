@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1091</width>
-    <height>697</height>
+    <height>496</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,7 +18,7 @@
     <property name="geometry">
      <rect>
       <x>950</x>
-      <y>550</y>
+      <y>330</y>
       <width>81</width>
       <height>41</height>
      </rect>
@@ -27,77 +27,34 @@
      <string>Выход</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="swapButton">
-    <property name="geometry">
-     <rect>
-      <x>510</x>
-      <y>10</y>
-      <width>121</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Поменять местами</string>
-    </property>
-   </widget>
    <widget class="QTextBrowser" name="errBrowser">
     <property name="geometry">
      <rect>
-      <x>940</x>
-      <y>460</y>
+      <x>820</x>
+      <y>320</y>
       <width>101</width>
       <height>61</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QListWidget" name="secondList">
-    <property name="geometry">
-     <rect>
-      <x>570</x>
-      <y>50</y>
-      <width>491</width>
-      <height>281</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QTextBrowser" name="textBrowser">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>380</y>
-      <width>211</width>
-      <height>221</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QTextBrowser" name="textBrowser_2">
-    <property name="geometry">
-     <rect>
-      <x>260</x>
-      <y>380</y>
-      <width>231</width>
-      <height>221</height>
      </rect>
     </property>
    </widget>
    <widget class="Line" name="line">
     <property name="geometry">
      <rect>
-      <x>500</x>
-      <y>360</y>
+      <x>490</x>
+      <y>0</y>
       <width>31</width>
-      <height>241</height>
+      <height>411</height>
      </rect>
     </property>
     <property name="orientation">
      <enum>Qt::Vertical</enum>
     </property>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="FlightsLabel">
     <property name="geometry">
      <rect>
-      <x>100</x>
-      <y>350</y>
+      <x>350</x>
+      <y>30</y>
       <width>41</width>
       <height>21</height>
      </rect>
@@ -106,11 +63,11 @@
      <string>Рейсы</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_2">
+   <widget class="QLabel" name="PortsLabel">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>350</y>
+      <x>90</x>
+      <y>30</y>
       <width>71</width>
       <height>21</height>
      </rect>
@@ -122,11 +79,310 @@
    <widget class="QTableWidget" name="firstList">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>50</y>
+      <x>530</x>
+      <y>10</y>
       <width>521</width>
       <height>281</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="FlightWidget">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>70</y>
+      <width>231</width>
+      <height>221</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="PortsWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>70</y>
+      <width>231</width>
+      <height>221</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>330</y>
+      <width>141</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string/>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Аэропорт</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Рейс</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="PortNameLabel">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>370</y>
+      <width>81</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Название</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="PortCityLabel">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>370</y>
+      <width>81</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Город</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="PortNameEdit">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>390</y>
+      <width>113</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="frame">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="PortCityEdit">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>390</y>
+      <width>113</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="addButton">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>330</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Добавить</string>
+    </property>
+   </widget>
+   <widget class="Line" name="line_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>280</y>
+      <width>1071</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_3">
+    <property name="geometry">
+     <rect>
+      <x>790</x>
+      <y>300</y>
+      <width>31</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="FlightTakeOffLabel">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>370</y>
+      <width>91</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Отправление</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="FlightLandLabel">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>370</y>
+      <width>71</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Прибытие</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="FlightModelLabel">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>370</y>
+      <width>71</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Модель</string>
+    </property>
+   </widget>
+   <widget class="QTimeEdit" name="TakeOffEdit">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>390</y>
+      <width>81</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="displayFormat">
+     <string>hh:mm</string>
+    </property>
+   </widget>
+   <widget class="QTimeEdit" name="LandEdit">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>390</y>
+      <width>81</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="displayFormat">
+     <string>hh:mm</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="FlightModelEdit">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>390</y>
+      <width>121</width>
+      <height>21</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>310</y>
+      <width>151</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Добавление элементов</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="conButton">
+    <property name="geometry">
+     <rect>
+      <x>670</x>
+      <y>320</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Добавить связь</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="disconButton">
+    <property name="geometry">
+     <rect>
+      <x>670</x>
+      <y>370</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Убрать связь</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="ConPortEdit">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>330</y>
+      <width>113</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="frame">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="ConFlightEdit">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>380</y>
+      <width>113</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="frame">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="ConPortLabel">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>310</y>
+      <width>81</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Аэропорт</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="ConFlightLabel">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>360</y>
+      <width>81</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Рейс</string>
     </property>
    </widget>
   </widget>
@@ -150,6 +406,7 @@
    <addaction name="OpenAction"/>
    <addaction name="separator"/>
    <addaction name="actionStOpenAction"/>
+   <addaction name="save"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="OpenAction">
@@ -166,6 +423,14 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+Shift+O</string>
+   </property>
+  </action>
+  <action name="save">
+   <property name="text">
+    <string>Сохранить в файл</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
    </property>
   </action>
  </widget>

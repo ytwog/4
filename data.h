@@ -4,22 +4,56 @@
 #include <QSet>
 #include <QVector>
 #include <QString>
+#include <QTime>
 
-class Data
+
+bool CheckTime(QString _time);
+
+class Airports
 {
 public:
-    Data();
-    Data(QString _name, QSet <QString> _cons);
-    ~Data();
-    void CreateConnection(QString name);
-    void EraseConnection(QString name);
-    QString getName();
-    QSet <QString> getCon();
+    Airports();
+    ~Airports();
+    void operator=(const Airports&);
+    void connect(QString);
+    void disconnect(QString);
+    void setName(QString _name);
+    void setCity(QString _city);
+
+    QSet <QString> getConnections() const;
+    QString getName() const;
+    QString getCity() const;
 private:
-    QString name;
+    QString Name;
+    QString City;
     QSet <QString> connections;
 };
 
+class Flights
+{
+public:
+    Flights();
+    ~Flights();
+    void operator=(const Flights&);
+    void connect(QString);
+    void disconnect(QString);
+    void setName(QString _name);
+    void setTakeOffTime(QTime _time);
+    void setLandTime(QTime _time);
+    void setModelType(QString _type);
+
+    QSet <QString> getConnections() const;
+    QString getName() const;
+    QTime getLandTime() const;
+    QTime getTakeOffTime() const;
+    QString getModelType() const;
+private:
+    QString Name;
+    QTime LandTime;
+    QTime TakeOffTime;
+    QString ModelType;
+    QSet <QString> connections;
+};
 
 
 #endif // DATA_H
